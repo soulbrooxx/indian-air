@@ -1,22 +1,41 @@
-# Set Up
-### Build Environment
-    python -m venv env
-### Install virtual Environment
-    pip install -r requirements.txt
-### activate venv : 
-#### window
-    .\env\Scripts\Activate
-#### linux
-    source env/bin/activate
-### deactivate venv: 
-    deactivate
-### Fix can't activate env:
-    run PowerShell as Admin
-    Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
-
 # ARIMA vs. Prophet: Performance Comparison
 
 This project aims to compare the performance of two popular time series forecasting models, **ARIMA** and **Prophet**, based on their predictive accuracy and statistical metrics. The results highlight the strengths and weaknesses of each model when applied to a specific dataset.
+
+## **Set Up**
+
+### **Build Environment**
+```bash
+python -m venv env
+```
+
+### **Install Virtual Environment**
+```bash
+pip install -r requirements.txt
+```
+
+### **Activate Virtual Environment**
+#### **Windows**
+```bash
+.\env\Scripts\Activate
+```
+#### **Linux**
+```bash
+source env/bin/activate
+```
+
+### **Deactivate Virtual Environment**
+```bash
+deactivate
+```
+
+### **Fix Can't Activate Virtual Environment**
+Run PowerShell as Administrator and execute:
+```bash
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+```
+
+---
 
 ## **Models Overview**
 
@@ -38,6 +57,8 @@ Prophet is an open-source tool developed by Facebook, designed for forecasting t
 - **Key Insight:**
   - Prophet shows limitations in handling the given dataset, as evidenced by the negative R-Squared value.
 
+---
+
 ## **Comparison Summary**
 
 | Metric                | ARIMA   | Prophet |
@@ -49,7 +70,10 @@ Prophet is an open-source tool developed by Facebook, designed for forecasting t
 - **ARIMA** outperforms Prophet with significantly better MSE and a positive R-Squared, indicating more reliable predictions.
 - **Prophet** exhibits lower MAE but fails to achieve a competitive R-Squared score, highlighting its struggle to fit the dataset effectively.
 
+---
+
 ## **Conclusion**
+
 Based on the performance metrics:
 - **ARIMA** is the better-performing model, offering more reliable and accurate predictions for the dataset.
 - **Prophet**, while useful for seasonal data, is less effective in this particular case.
@@ -57,6 +81,7 @@ Based on the performance metrics:
 This project underscores the importance of selecting the appropriate model based on the dataset and forecasting requirements.
 
 ---
+
 ## **Acknowledgments**
 - The ARIMA model was implemented using the statsmodels library.
 - Prophet was implemented using Facebook's fbprophet package.
